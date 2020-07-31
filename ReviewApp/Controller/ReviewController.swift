@@ -29,7 +29,7 @@ class ReviewController: UITableViewController {
                 print("Failed to fetch courses:", err)
                 return
             }
-
+            
             self.courseViewModels = courses?.map({return CourseViewModel(course: $0)}) ?? []
             self.tableView.reloadData()
         }
@@ -43,6 +43,17 @@ class ReviewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! CourseCell
         let courseViewModel = courseViewModels[indexPath.row]
         cell.courseViewModel = courseViewModel
+//        cell.addSubview(courseViewModel.star)
+//        let starRatingView = StarRatingView(frame: CGRect(origin: .zero, size: CGSize(width: 250, height: 150)), rating: 3.5, color: UIColor.systemOrange, starRounding: .roundToHalfStar)
+//        starRatingView.rating = courseViewModel.rate
+//        starRatingView.starColor = .blue
+//        //        starRatingView.starRounding (type: StarRounding)
+//        starRatingView.isUserInteractionEnabled = true
+//        cell.addSubview(starRatingView)
+//        starRatingView.anchor(paddingLeft: 10, paddingBottom: 10, paddingRight: 10)
+//
+//        cell.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        
         return cell
     }
     
@@ -52,15 +63,18 @@ class ReviewController: UITableViewController {
         tableView.separatorColor = .mainTextBlue
         tableView.backgroundColor = UIColor.rgb(r: 12, g: 47, b: 57)
         tableView.rowHeight = UITableView.automaticDimension
-        tableView.estimatedRowHeight = 50
+        tableView.estimatedRowHeight = 80
         tableView.tableFooterView = UIView()
     }
     
     @objc  func addTapped (){
-        //New add new review page should show up
+        //New review page should show up
+//        let newViewController = AddReviewController()
+//        self.navigationController?.pushViewController(newViewController, animated: true)
+        self.navigationController?.pushViewController(AddReviewController(), animated: true)
+        
     }
     fileprivate func setupNavBar() {
-        
         navigationItem.title = "Adila's Reviews"
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Add", style: .done, target: self, action: #selector(addTapped))
         navigationController?.navigationBar.prefersLargeTitles = true

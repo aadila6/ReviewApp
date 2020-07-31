@@ -7,8 +7,6 @@
 //
 
 import Foundation
-
-import Foundation
 import UIKit
 
 struct CourseViewModel {
@@ -16,17 +14,24 @@ struct CourseViewModel {
     let name: String
     let detailTextString: String
     let accessoryType: UITableViewCell.AccessoryType
+    let rate : Float
+    let star : UIView
     
     // Dependency Injection (DI)
     init(course: Course) {
         self.name = course.name
+        self.rate = Float(course.number_of_lessons)
+        self.detailTextString = "Rating : "
+        let starRatingView = StarRatingView(frame: CGRect(origin: .zero, size: CGSize(width: 250, height: 150)), rating: 3.5, color: UIColor.systemOrange, starRounding: .roundToHalfStar)
+        starRatingView.rating = Float(course.number_of_lessons)
+        starRatingView.starColor = .blue
+//        starRatingView.starRounding = true
+//        starRatingView.isUserInteractionEnabled = true
+//        addSubview(starRatingView)
+        starRatingView.anchor(paddingLeft: 10, paddingBottom: 10, paddingRight: 10)
+        self.star = starRatingView
+        self.accessoryType = .detailDisclosureButton
+       
         
-        if course.number_of_lessons > 35 {
-            detailTextString = "Lessons 30+ Check it Out!"
-            accessoryType = .detailDisclosureButton
-        } else {
-            detailTextString = "Lessons: \(course.number_of_lessons)"
-            accessoryType = .none
-        }
     }
 }

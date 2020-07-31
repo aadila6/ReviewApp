@@ -19,6 +19,11 @@
 		C55371AF24D2325900211645 /* ReviewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C55371AE24D2325900211645 /* ReviewViewModel.swift */; };
 		C55371B124D2339800211645 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = C55371B024D2339800211645 /* Service.swift */; };
 		C55371D524D2453000211645 /* Data.json in Resources */ = {isa = PBXBuildFile; fileRef = C55371D424D2453000211645 /* Data.json */; };
+		C55371D724D3700E00211645 /* StarRatingStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C55371D624D3700D00211645 /* StarRatingStackView.swift */; };
+		C55371DA24D3701B00211645 /* StarRatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C55371D824D3701A00211645 /* StarRatingView.swift */; };
+		C55371DB24D3701B00211645 /* StarRatingStackView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C55371D924D3701A00211645 /* StarRatingStackView.xib */; };
+		C55371DF24D3749900211645 /* UIExtentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C55371DE24D3749900211645 /* UIExtentions.swift */; };
+		C55371E124D3AB1D00211645 /* AddReviewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C55371E024D3AB1D00211645 /* AddReviewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +41,11 @@
 		C55371AE24D2325900211645 /* ReviewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewViewModel.swift; sourceTree = "<group>"; };
 		C55371B024D2339800211645 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		C55371D424D2453000211645 /* Data.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Data.json; sourceTree = "<group>"; };
+		C55371D624D3700D00211645 /* StarRatingStackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StarRatingStackView.swift; sourceTree = "<group>"; };
+		C55371D824D3701A00211645 /* StarRatingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StarRatingView.swift; sourceTree = "<group>"; };
+		C55371D924D3701A00211645 /* StarRatingStackView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StarRatingStackView.xib; sourceTree = "<group>"; };
+		C55371DE24D3749900211645 /* UIExtentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIExtentions.swift; sourceTree = "<group>"; };
+		C55371E024D3AB1D00211645 /* AddReviewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddReviewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +78,9 @@
 		C553718E24D22F3300211645 /* ReviewApp */ = {
 			isa = PBXGroup;
 			children = (
+				C55371D924D3701A00211645 /* StarRatingStackView.xib */,
+				C55371D824D3701A00211645 /* StarRatingView.swift */,
+				C55371D624D3700D00211645 /* StarRatingStackView.swift */,
 				C55371A724D22F7A00211645 /* ViewModel */,
 				C55371A624D22F7200211645 /* Service */,
 				C55371A524D22F6C00211645 /* Controller */,
@@ -105,6 +118,7 @@
 			isa = PBXGroup;
 			children = (
 				C55371AA24D231EE00211645 /* ReviewController.swift */,
+				C55371E024D3AB1D00211645 /* AddReviewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -121,6 +135,7 @@
 			isa = PBXGroup;
 			children = (
 				C55371AE24D2325900211645 /* ReviewViewModel.swift */,
+				C55371DE24D3749900211645 /* UIExtentions.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -186,6 +201,7 @@
 				C553719C24D22F3700211645 /* LaunchScreen.storyboard in Resources */,
 				C553719924D22F3700211645 /* Assets.xcassets in Resources */,
 				C553719724D22F3300211645 /* Main.storyboard in Resources */,
+				C55371DB24D3701B00211645 /* StarRatingStackView.xib in Resources */,
 				C55371D524D2453000211645 /* Data.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -198,13 +214,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				C55371AB24D231EE00211645 /* ReviewController.swift in Sources */,
+				C55371D724D3700E00211645 /* StarRatingStackView.swift in Sources */,
 				C55371B124D2339800211645 /* Service.swift in Sources */,
+				C55371DF24D3749900211645 /* UIExtentions.swift in Sources */,
+				C55371DA24D3701B00211645 /* StarRatingView.swift in Sources */,
 				C55371AD24D2321800211645 /* ReviewCell.swift in Sources */,
 				C55371AF24D2325900211645 /* ReviewViewModel.swift in Sources */,
 				C553719424D22F3300211645 /* ViewController.swift in Sources */,
 				C55371A924D22FB000211645 /* Review.swift in Sources */,
 				C553719024D22F3300211645 /* AppDelegate.swift in Sources */,
 				C553719224D22F3300211645 /* SceneDelegate.swift in Sources */,
+				C55371E124D3AB1D00211645 /* AddReviewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
