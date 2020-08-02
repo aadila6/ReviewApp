@@ -24,6 +24,7 @@
 		C55371DB24D3701B00211645 /* StarRatingStackView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C55371D924D3701A00211645 /* StarRatingStackView.xib */; };
 		C55371DF24D3749900211645 /* UIExtentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C55371DE24D3749900211645 /* UIExtentions.swift */; };
 		C55371E124D3AB1D00211645 /* AddReviewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C55371E024D3AB1D00211645 /* AddReviewController.swift */; };
+		C553721E24D66DF600211645 /* DetailReview.swift in Sources */ = {isa = PBXBuildFile; fileRef = C553721D24D66DF600211645 /* DetailReview.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,7 @@
 		C55371D924D3701A00211645 /* StarRatingStackView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StarRatingStackView.xib; sourceTree = "<group>"; };
 		C55371DE24D3749900211645 /* UIExtentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIExtentions.swift; sourceTree = "<group>"; };
 		C55371E024D3AB1D00211645 /* AddReviewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddReviewController.swift; sourceTree = "<group>"; };
+		C553721D24D66DF600211645 /* DetailReview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailReview.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +121,7 @@
 			children = (
 				C55371AA24D231EE00211645 /* ReviewController.swift */,
 				C55371E024D3AB1D00211645 /* AddReviewController.swift */,
+				C553721D24D66DF600211645 /* DetailReview.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -218,6 +221,7 @@
 				C55371B124D2339800211645 /* Service.swift in Sources */,
 				C55371DF24D3749900211645 /* UIExtentions.swift in Sources */,
 				C55371DA24D3701B00211645 /* StarRatingView.swift in Sources */,
+				C553721E24D66DF600211645 /* DetailReview.swift in Sources */,
 				C55371AD24D2321800211645 /* ReviewCell.swift in Sources */,
 				C55371AF24D2325900211645 /* ReviewViewModel.swift in Sources */,
 				C553719424D22F3300211645 /* ViewController.swift in Sources */,

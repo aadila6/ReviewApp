@@ -15,21 +15,13 @@ struct CourseViewModel {
     let detailTextString: String
     let accessoryType: UITableViewCell.AccessoryType
     let rate : Float
-    let star : UIView
+//    let star : UIView
     
     // Dependency Injection (DI)
     init(course: Course) {
         self.name = course.name
         self.rate = Float(course.number_of_lessons)
         self.detailTextString = course.comment
-        let starRatingView = StarRatingView(frame: CGRect(origin: .zero, size: CGSize(width: 250, height: 150)), rating: 3.5, color: .white, starRounding: .roundToHalfStar)
-        starRatingView.rating = Float(course.number_of_lessons)
-        starRatingView.starColor = .blue
-//        starRatingView.starRounding = true
-//        starRatingView.isUserInteractionEnabled = true
-//        addSubview(starRatingView)
-        starRatingView.anchor(paddingLeft: 10, paddingBottom: 10, paddingRight: 10)
-        self.star = starRatingView
         self.accessoryType = .detailDisclosureButton
        
         

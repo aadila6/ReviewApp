@@ -38,33 +38,37 @@ class ReviewController: UITableViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return courseViewModels.count
     }
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 80
+    }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! CourseCell
         let courseViewModel = courseViewModels[indexPath.row]
         cell.courseViewModel = courseViewModel
-        
-                let starRatingView = StarRatingView(frame: CGRect(origin: .zero, size: CGSize(width: 150, height: 150)), rating: 3.5, color: UIColor.systemOrange, starRounding: .roundToHalfStar)
+        let starRatingView = StarRatingView(frame: CGRect(origin: .zero, size: CGSize(width: 150, height: 150)), rating: 3.5, color: UIColor.systemOrange, starRounding: .roundToHalfStar)
         starRatingView.center = cell.center
-                starRatingView.rating = Float(courseViewModel.rate)
-//                starRatingView.rating = Float(courseViewModel.rate ?? 5.0 )
+        starRatingView.rating = Float(courseViewModel.rate)
+        starRatingView.isUserInteractionEnabled = false
         cell.addSubview(starRatingView)
+        starRatingView.anchor(top: cell.topAnchor,left: cell.textLabel?.rightAnchor, paddingTop: 15, paddingLeft: 30 )
         
-//        cell.addSubview(courseViewModel.star)
-//        let starRatingView = StarRatingView(frame: CGRect(origin: .zero, size: CGSize(width: 250, height: 150)), rating: 3.5, color: UIColor.systemOrange, starRounding: .roundToHalfStar)
-//        starRatingView.rating = courseViewModel.rate
-//        starRatingView.starColor = .blue
-//        //        starRatingView.starRounding (type: StarRounding)
-//        starRatingView.isUserInteractionEnabled = true
-//        cell.addSubview(starRatingView)
-//        starRatingView.anchor(paddingLeft: 10, paddingBottom: 10, paddingRight: 10)
-//
-//        cell.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         
         return cell
     }
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print("Selected row ", indexPath.row)
+        let courseViewModel = courseViewModels[indexPath.row]
+        let titleString = "\(courseViewModel.name) (\(courseViewModel.rate)/5.0)"
+        let alert = UIAlertController(title: titleString, message: courseViewModel.detailTextString, preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: "Done", style: UIAlertAction.Style.default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+    }
     
     fileprivate func setupTableView() {
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.allowsSelection = true
         tableView.register(CourseCell.self, forCellReuseIdentifier: cellId)
         tableView.separatorInset = UIEdgeInsets(top: 0, left: 24, bottom: 0, right: 24)
         tableView.separatorColor = .mainTextBlue
@@ -74,11 +78,7 @@ class ReviewController: UITableViewController {
         tableView.tableFooterView = UIView()
     }
     
-    @objc  func addTapped (){
-        //New review page should show up
-//        let newViewController = AddReviewController()
-//        self.navigationController?.pushViewController(newViewController, animated: true)
-        
+    @objc func addTapped (){
         self.navigationController?.pushViewController(AddReviewController(), animated: true)
         
     }
