@@ -43,6 +43,13 @@ class ReviewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! CourseCell
         let courseViewModel = courseViewModels[indexPath.row]
         cell.courseViewModel = courseViewModel
+        
+                let starRatingView = StarRatingView(frame: CGRect(origin: .zero, size: CGSize(width: 150, height: 150)), rating: 3.5, color: UIColor.systemOrange, starRounding: .roundToHalfStar)
+        starRatingView.center = cell.center
+                starRatingView.rating = Float(courseViewModel.rate)
+//                starRatingView.rating = Float(courseViewModel.rate ?? 5.0 )
+        cell.addSubview(starRatingView)
+        
 //        cell.addSubview(courseViewModel.star)
 //        let starRatingView = StarRatingView(frame: CGRect(origin: .zero, size: CGSize(width: 250, height: 150)), rating: 3.5, color: UIColor.systemOrange, starRounding: .roundToHalfStar)
 //        starRatingView.rating = courseViewModel.rate
@@ -61,9 +68,9 @@ class ReviewController: UITableViewController {
         tableView.register(CourseCell.self, forCellReuseIdentifier: cellId)
         tableView.separatorInset = UIEdgeInsets(top: 0, left: 24, bottom: 0, right: 24)
         tableView.separatorColor = .mainTextBlue
-        tableView.backgroundColor = UIColor.rgb(r: 12, g: 47, b: 57)
+        tableView.backgroundColor = UIColor.white
         tableView.rowHeight = UITableView.automaticDimension
-        tableView.estimatedRowHeight = 80
+        tableView.estimatedRowHeight = 100
         tableView.tableFooterView = UIView()
     }
     
@@ -71,6 +78,7 @@ class ReviewController: UITableViewController {
         //New review page should show up
 //        let newViewController = AddReviewController()
 //        self.navigationController?.pushViewController(newViewController, animated: true)
+        
         self.navigationController?.pushViewController(AddReviewController(), animated: true)
         
     }

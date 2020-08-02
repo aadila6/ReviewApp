@@ -19,8 +19,8 @@ extension UIView{
                 paddingBottom : CGFloat = 0,
                 paddingRight : CGFloat = 0,
                 width: CGFloat? = nil,
-                height: CGFloat? = nil){
-       
+                height: CGFloat? = nil)
+    {
         translatesAutoresizingMaskIntoConstraints = false //telling the progromatic constrains
         if let top = top {
             topAnchor.constraint(equalTo: top, constant: paddingTop).isActive = true
@@ -51,12 +51,3 @@ extension UIView{
     
     
 }
-//
-//  Extention.swift
-//  UberLike
-//
-//  Created by Adila on 7/30/20.
-//  Copyright © 2020 Adila Abudureheman. All rights reserved.
-//
-
-import Foundation

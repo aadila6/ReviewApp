@@ -33,9 +33,11 @@ class CourseCell: UITableViewCell {
         textLabel?.numberOfLines = 0
         detailTextLabel?.textColor = .black
         detailTextLabel?.font = UIFont.systemFont(ofSize: 20, weight: .light)
-        let starRatingView = StarRatingView(frame: CGRect(origin: .zero, size: CGSize(width: 150, height: 150)), rating: 3.5, color: UIColor.systemOrange, starRounding: .roundToHalfStar)
+//        let starRatingView = StarRatingView(frame: CGRect(origin: .zero, size: CGSize(width: 150, height: 150)), rating: 3.5, color: UIColor.systemOrange, starRounding: .roundToHalfStar)
+//        starRatingView.center = center
+//        starRatingView.rating = Float(courseViewModel.rate)
 //        starRatingView.rating = Float(courseViewModel.rate ?? 5.0 )
-        addSubview(starRatingView)
+//        addSubview(starRatingView)
         
     }
     

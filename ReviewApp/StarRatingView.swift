@@ -19,7 +19,7 @@ public enum StarRounding: Int {
 @IBDesignable
 class StarRatingView: UIView {
     
-    @IBInspectable var rating: Float = 3.5 {
+    @IBInspectable var rating: Float = 0.5 {
         didSet {
             setStarsFor(rating: rating)
         }
@@ -66,7 +66,7 @@ class StarRatingView: UIView {
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        self.setupView(rating: 3.5, color: UIColor.systemOrange, starRounding: .roundToHalfStar)
+        self.setupView(rating: 0.5, color: UIColor.systemOrange, starRounding: .roundToHalfStar)
     }
     
     
