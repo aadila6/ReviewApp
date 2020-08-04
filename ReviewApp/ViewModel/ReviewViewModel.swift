@@ -18,9 +18,9 @@ struct CourseViewModel {
 //    let star : UIView
     
     // Dependency Injection (DI)
-    init(course: Course) {
+    init(course: Item) {
         self.name = course.name
-        self.rate = Float(course.number_of_lessons)
+        self.rate = Float(course.rate)
         self.detailTextString = course.comment
         self.accessoryType = .detailDisclosureButton
        

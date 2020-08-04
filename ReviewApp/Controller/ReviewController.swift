@@ -9,30 +9,35 @@
 
 
 import UIKit
+import RealmSwift
 
 class ReviewController: UITableViewController {
     
     var courseViewModels = [CourseViewModel]()
     let cellId = "cellId"
+//    var realm : Realm
+//    var realm: Realm = Realm()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         print("Inside ReviewController")
+        let realm = try! Realm()
+        print("REALM PATH: \(Realm.Configuration.defaultConfiguration.fileURL)")
+        let listItems = realm.objects(Item.self)
+        for item in listItems {
+            print(item.name)
+        }
         setupNavBar()
         setupTableView()
         fetchData()
     }
     
     fileprivate func fetchData() {
-        Service.shared.fetchCourses { (courses, err) in
-            if let err = err {
-                print("Failed to fetch courses:", err)
-                return
-            }
-            
-            self.courseViewModels = courses?.map({return CourseViewModel(course: $0)}) ?? []
-            self.tableView.reloadData()
-        }
+        let realm = try! Realm()
+        let listItems = realm.objects(Item.self)
+        self.courseViewModels = listItems.map({return CourseViewModel(course: $0)}) ?? []
+        self.tableView.reloadData()
+        
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

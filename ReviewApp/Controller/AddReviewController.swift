@@ -28,17 +28,15 @@ class AddReviewController: UIViewController, UITextFieldDelegate {
         setupEntry()
     }
     
-//    fileprivate func UpdateData() {
-//        Service.shared.updateJson()
-//    }
     
     @objc func addTapped (){
         let data1 = self.nameField.text ?? "Empty String"
         let data2 = self.myTextField.text ?? "Empty String"
         var course = Course(id1: 4, name1: data1, number_of_lessons1: 4, comment1: data2)
-        Service.shared.updateJson(course: course)
+        let item = Item()
+        item.addNew(course: course)
+//        Service.shared.updateJson(course: course)
         self.navigationController?.popToRootViewController(animated: true)
-        
     }
     
     fileprivate func setupNavBar() {
